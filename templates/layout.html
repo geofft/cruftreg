@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+          {% block title %}{% endblock %} - mitcruft.org
+        </title>
+    </head>
+    <body>
+        <h1>{% block title %}{% endblock %}</h1>
+        <div id="content">
+            {% block content %}{% endblock %}
+        </div>
+        <hr>
+        <center><address><small>a <a href="geofft@mit.edu">Geoffrey Thomas</a> production</small></address></center>
+    </body>
+</html>
