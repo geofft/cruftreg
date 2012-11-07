@@ -3,12 +3,13 @@
 from flask import Flask, g
 
 import index
-import kauth
+import password
 
 app = Flask(__name__)
 
 app.add_url_rule("/", "index", index.index)
-app.add_url_rule("/register", "register", register.register, methods=['GET', 'POST'])
+app.add_url_rule("/password", "password", password.password, methods=['GET', 'POST'])
 
 if __name__ == "__main__":
+    app.debug = True
     app.run()
