@@ -1,7 +1,7 @@
 from flask import render_template, request, g
 import PAM
 
-from register import register
+import register
 
 def conv(pam, msgs, resp):
     ret = ""
@@ -24,6 +24,6 @@ def password():
             return render_template('password.html', error=error[0])
         if g.message != "":
             return render_template('password.html', error=error)
-        return register(user)
+        return register.webregister(user)
     else:
         return render_template('password.html')

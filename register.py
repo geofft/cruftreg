@@ -3,17 +3,15 @@
 from flask import render_template
 import hmac
 
-import key
-
 def register(user):
-    h = hmac.new(key.key)
+    h = hmac.new(open('key').read())
     h.update(user)
     return h.hexdigest()
 
 def webregister(user):
     ret = register(user)
     if ret:
-        return render_template('success.html', user=user, key=ret)
+        return render_template('success.html', user=user, token=ret)
     else:
         return render_template('failure.html', user=user)
 
