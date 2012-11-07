@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from flask import Flask, g
+from flask import Flask
 
 import index
 import password
