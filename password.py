@@ -23,7 +23,7 @@ def password():
         except PAM.error as error:
             return render_template('password.html', error=error[0])
         if g.message != "":
-            return render_template('password.html', error=error)
+            return render_template('password.html', error=g.message)
         return register.webregister(user)
     else:
         return render_template('password.html')
